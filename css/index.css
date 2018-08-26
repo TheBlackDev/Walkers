@@ -1,0 +1,36 @@
+body {
+    background-image: url("../img/background.jpg");
+}
+
+#chat {
+    background-color: rgba(50, 50, 50, .7);
+    min-height: 75%;
+    max-height: 75%;
+}
+
+#news-feed {
+    background-color: rgba(50, 50, 50, .7);
+    min-height: 75%;
+    max-height: 75%;
+}
+
+.user-message {
+    text-align: right
+}
+
+.page-container {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.mention {
+    text-decoration: underline;
+}
+
+#input-container {
+    background-color: rgba(20, 20, 20, .6);
+}
+
+#chat-window {
+    min-height: 65%;
+}
