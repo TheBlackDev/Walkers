@@ -1,10 +1,11 @@
 <html>
     <head>
     
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import Font Awesome-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
 
@@ -22,11 +23,10 @@
             <div class="nav-wrapper grey darken-3">
                 <a href="#bewalker.xyz" class="brand-logo left" style="margin-left: 2%"><strong>Walker</strong></a>
                 <ul id="nav" class="right">
-                    <li><a href="#/about">About</a></li>
-                    <li><a href="#/login">Login</a></li>
-                    <li><a href="#/register"><strong>Register</strong></a></li>
-                </ul>
-                
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register"><strong>Register</strong></a></li>
+                </ul>                
             </div>
         </nav>
     
@@ -37,41 +37,14 @@
                 <br>
                 <div class="input-field col s12">
                     <select id="select1" onchange="goToChat()">
-                        <option value="1" >!001</option>
-                        <option value="2">!002</option>
-                        <option value="3">!003</option>
-                        <option value="4">!004</option>
-                        <option value="5">!005</option>
-                        <option value="6">!006</option>
-                        <option value="7">!007</option>
-                        <option value="8">!008</option>
-                        <option value="9">!009</option>
-                        <option value="10">!010</option>
-                        <option value="11">!011</option>
-                        <option value="12">!012</option>
-                        <option value="13">!013</option>
-                        <option value="14">!014</option>
-                        <option value="15">!015</option>
-                        <option value="16">!016</option>
-                        <option value="17">!017</option>
-                        <option value="18">!018</option>
-                        <option value="19">!019</option>
-                        <option value="20">!020</option>
-                        <option value="21">!021</option>
-                        <option value="22">!022</option>
-                        <option value="23">!023</option>
-                        <option value="24">!024</option>
-                        <option value="25">!025</option>
-                        <option value="26">!026</option>
-                        <option value="27">!027</option>
-                        <option value="28">!028</option>
-                        <option value="29">!029</option>
-                        <option value="30">!030</option>
-                        <option value="31" disabled selected >!031</option>
-                        <option value="32">!032</option>
-                        <option value="33">!033</option>
-                        <option value="34">!034</option>
-                        
+                        <% for(var i = 1; i < 101; i++) {  
+                            if(i == chat_number) { %> 
+                                <option value="<%- i -%>" disabled selected> !<%- i -%> </option>
+                            <%}
+                            else {%> 
+                                <option value="<%- i -%>"> !<%- i -%> </option>
+                            <%}                                                    
+                        } %>
                     </select>
                     <label>Changer de salon</label>
                 </div>
@@ -163,11 +136,14 @@
                     </ul>                   
                 </div>
                 
-                <div class="" id="input-container">
-                        <div class="input-field">
-                          <input id="message" type="text" class="white-text">
-                          <label for="message" style="margin-left: 2%">Enter your message !</label>
-                        </div>                    
+                <div class="container-fluid row" id="input-container">                        
+                    <div class="input-field col s8">
+                        <input id="message" type="text" class="white-text">
+                        <label for="message" style="margin-left: 2%">Enter your message !</label>                          
+                    </div>
+                    <div class="col s4" style="margin-top: 4%; padding-left: 10%">
+                        <a class="waves-effect waves-light btn white-text" onclick="sendMessage()"><i class="material-icons right">send</i>send</a>
+                    </div>                        
                 </div>
                 
             </div>
@@ -187,7 +163,16 @@
                                 cupidatat ab irure, nisi appellat occaecat ea lorem cohaerescant vidisse magna 
                                 incurreret qui iis consequat eu cernantur, singulis veniam aute incididunt quid, 
                                 ne multos eiusmod laboris iis si eram doctrina despicationes. Aliquip aute cernantur ingeniis, mentitum enim eiusmod.  
-                                </p>
+                            </p>
+                            
+                            <p>ZONE DES ESSAIS</p>
+                            <p>
+                            
+                                <% if (49 == chat_number){%> JE SUIS LE MEC LE PLUS INTELLIGENT DU MONDE <%}%>
+                            
+
+                            
+                            </p>
                         
                         </div>
                     
@@ -212,7 +197,7 @@
             <div class="modal-content">
                 <h4>Hi, you, yes you !</h4>
                 <p>Hi, welcome to bewalker.tk, a website where all people can find someone to talk with. <br>
-                <strong>You've been automaticaly sent to !031</strong>.</p>
+                <strong>You've been automaticaly sent to !<%- chat_number -%></strong>.</p>
             </div>
             <div class="modal-footer">
                 <strong><a href="#!" class="modal-close waves-effect waves-green btn-flat">OK <i class="material-icons">done</i></a></strong>
@@ -221,16 +206,25 @@
         
         
         <!-- JavaScript at end of body for optimized loading -->
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
         <script>
             M.AutoInit();
-            M.Modal.getInstance(modal1).open();
-            window.location.href = "#/31";
+        
+            var current_url = document.location.href.split("#");
+            
+            if(current_url[1] == "redirected"){
+                M.Modal.getInstance(modal1).open();
+            }
+            
             
             function goToChat(){
                 var brut = document.getElementById("select1").options[document.getElementById("select1").selectedIndex].value;
                 var value = parseInt(brut);
-                window.location.href = "#/"+value;
+                window.location.href = "/chat/"+value;
+            }
+            
+            function sendMessage(){
+                console.log(document.getElementById("message").value.toString());
             }
         </script>
         

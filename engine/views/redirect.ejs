@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    
+        <title>Redirecting...</title>
+        <style>
+        
+            body {
+                background-image: url("img/background.jpg");
+            }
+            
+            h1 {
+                text-align: center;
+                color: white;
+                margin-top: 20%;
+            }
+        
+        </style>
+        
+    </head>
+    
+    <body onload="setTimeout(redirect, 1666)"> <!--  LOVE HELL  666666666 -->
+    
+    <h1>Redirecting...</h1>
+    
+    <script>
+        function redirect() {
+                var random = Math.random();
+                var trunced = Math.trunc(random * 100 + 1);
+                window.location.href = "/chat/" + trunced +"#redirected"; 
+        }
+    </script>    
+        
+    </body>
+
+</html>
