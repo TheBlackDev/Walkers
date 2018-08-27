@@ -1,0 +1,70 @@
+body {
+    background-image: url("../img/background.jpg");
+}
+
+#chat {
+    background-color: rgba(50, 50, 50, .7);
+    min-height: 75%;
+    max-height: 75%;
+    margin-top: 4%;
+}
+
+#left-pannel {
+    background-color: rgba(50, 50, 50, .7);
+    min-height: 75%;
+    max-height: 75%;
+    margin-top: 6%;
+}
+
+.user-message {
+    text-align: right
+}
+
+.page-container {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.mention {
+    text-decoration: underline;
+}
+
+#input-container {
+    background-color: rgba(20, 20, 20, .6);
+    padding-right: 1%;
+    padding-left: 1%;
+    margin-top: 5%;
+}
+
+#chat-window {
+    min-height: 63%;
+    min-width: 100%;
+    max-height: 63%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#news-feed {
+    min-height: 62%;
+    min-width: 100%;
+    max-height: 62%;
+}
+
+#news-image {
+    max-height: 28em;
+    max-width: 90%;
+    align-self: center;
+}
+
+.social {
+    font-size: 23px;
+
+}
+
+.social-margin {
+    margin-right: 2%
+}
+
+#image-container {
+    margin-top: 5%
+}
