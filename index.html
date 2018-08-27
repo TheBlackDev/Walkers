@@ -37,7 +37,7 @@
                 <br>
                 <div class="input-field col s12">
                     <select id="select1" onchange="goToChat()">
-                        <option value="1">!001</option>
+                        <option value="1" >!001</option>
                         <option value="2">!002</option>
                         <option value="3">!003</option>
                         <option value="4">!004</option>
@@ -67,7 +67,7 @@
                         <option value="28">!028</option>
                         <option value="29">!029</option>
                         <option value="30">!030</option>
-                        <option value="31" disabled selected>!031</option>
+                        <option value="31" disabled selected >!031</option>
                         <option value="32">!032</option>
                         <option value="33">!033</option>
                         <option value="34">!034</option>
@@ -172,14 +172,33 @@
                 
             </div>
                 <div id="left-pannel" class="col s12 m6 l7 offset-l1 offset-m1 white-text pannel">
-                    <div id="news-feed"></div>
+                    <div id="news-feed">
+                    
+                        <div id="image-container" class="center"><img src="img/news.JPG" id="news-image" alt="news-image"></div>
+                        <br>
+                        <div id="comment-container">
+                            <h5 class="center">A new website !</h5>
+                            <br>
+                            <p style="text-align: justify">Eiusmod est doctrina. Ab sint do sunt ita voluptate ut tempor. Dolor tempor o 
+                                magna irure ubi legam si mandaremus. Sed magna concursionibus. Ea ab quem fore 
+                                tamen ita velit eiusmod fabulas. Possumus ad senserit ab doctrina aut noster 
+                                voluptate, occaecat quo labore cernantur, nostrud duis tempor. Velit 
+                                philosophari ullamco tamen nescius. Dolor excepteur eu voluptate, quis te 
+                                cupidatat ab irure, nisi appellat occaecat ea lorem cohaerescant vidisse magna 
+                                incurreret qui iis consequat eu cernantur, singulis veniam aute incididunt quid, 
+                                ne multos eiusmod laboris iis si eram doctrina despicationes. Aliquip aute cernantur ingeniis, mentitum enim eiusmod.  
+                                </p>
+                        
+                        </div>
+                    
+                    </div>
                     <div id="footer">
                         <div class="center white-text">Contact us on :</div>
                         <div id="social-container" class="center">
-                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://github.com/TheBlackDev/Walkers" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook social social-margin"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter social  social-margin"></i></a>
+                            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram social social-margin"></i></a>
+                            <a href="https://github.com/TheBlackDev/Walkers" target="_blank"><i class="fab fa-github social"></i></a>
                         </div>
                     </div>
                 </div>
@@ -206,11 +225,12 @@
         <script>
             M.AutoInit();
             M.Modal.getInstance(modal1).open();
+            window.location.href = "#/31";
             
             function goToChat(){
                 var brut = document.getElementById("select1").options[document.getElementById("select1").selectedIndex].value;
                 var value = parseInt(brut);
-                window.location.href = "#/"+value
+                window.location.href = "#/"+value;
             }
         </script>
         
