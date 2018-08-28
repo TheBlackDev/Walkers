@@ -55,16 +55,23 @@ app.use(function(req, res, next){
     res.status(404).send('Page introuvable !');
 });
 
+
+
 var httpServer = http.createServer(app);
 //var httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(8080);
 //httpsServer.listen(8443);
 
-var io = require('socket.io')(http);
-io.on('connection', function (socket){
+var io = require('socket.io').listen(http);
+
+/*io.on('connection', function (socket){
     socket.emit('news', {hello: 'world'});
     socket.on('my other event', function (data){
         console.log(data);
     })
-})
+})*/
+
+io.sockets.on('connection', function(socket){
+    console.log('Un Client est connecté !')
+});
